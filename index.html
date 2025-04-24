@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chris Finnegan PI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Main content container -->
+  <div class="site-container">
+    <div class="inner-content">
+      <header>
+        <img src="assets/logo.png" alt="Finnegan Investigations logo" class="logo" />
+        <h1>Chris Finnegan</h1>
+        <p class="tagline">Private Investigator | License #013773</p>
+      </header>
+
+      <hr class="decorative-hr" />
+
+      <main>
+        <section id="contact-inline" class="contact-inline">
+          <a href="tel:+15593730901">(559) 373-0901</a> |
+          <a href="mailto:Chris@FinneganPI.com">Chris@FinneganPI.com</a>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; <span id="year"></span> Finnegan Investigations</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal overlay -->
+  <div id="modalOverlay" class="modal-overlay"></div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/Chris@FinneganPI.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="inline-button">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ Modal -->
+  <div id="faqModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+        <li>
+          <strong>What is a PI license and why is it required?</strong>
+          <p>In California, private investigators must hold a BSIS license (PI License #013773). This ensures all investigations meet professional standards and legal requirements.</p>
+        </li>
+        <li>
+          <strong>How are your investigation rates structured?</strong>
+          <p>I charge an hourly rate plus out-of-pocket expenses (e.g., mileage, records fees). A detailed estimate is provided before work begins.</p>
+        </li>
+        <li>
+          <strong>Which types of cases do you handle?</strong>
+          <p>Administrative, personnel, background checks, surveillance, and special-assignment investigations tailored to your needs.</p>
+        </li>
+        <li>
+          <strong>How do you ensure confidentiality?</strong>
+          <p>All case files and findings are protected under strict confidentiality agreements, with secure data storage and discrete communication.</p>
+        </li>
+        <li>
+          <strong>What is the typical timeline?</strong>
+          <p>Most domestic and background investigations are completed within 1–2 weeks; complex or multi-location cases may take longer.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Experience Modal -->
+  <div id="expModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Professional Experience</h2>
+      <ul class="exp-list">
+        <li>Officer-Involved Shootings: Oversaw evidence collection & timeline reconstruction.</li>
+        <li>Traffic Collisions: Recreated accident scenes and interviewed witnesses.</li>
+        <li>Environmental Crimes: Documented illegal dumping & pollutant tracking.</li>
+        <li>Personnel/Administrative Investigations: Handled internal HR and compliance cases.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Four floating buttons at bottom -->
+  <div class="inline-buttons">
+    <a class="inline-button"
+       href="https://search.dca.ca.gov/?q=013773"
+       target="_blank" rel="noopener noreferrer">
+      Verify License
+    </a>
+    <button class="inline-button modal-button" data-target="contactModal">
+      Contact
+    </button>
+    <button class="inline-button modal-button" data-target="faqModal">
+      FAQ
+    </button>
+    <button class="inline-button modal-button" data-target="expModal">
+      Experience
+    </button>
+  </div>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modal functionality
+    const overlay = document.getElementById('modalOverlay');
+    document.querySelectorAll('.modal-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = document.getElementById(btn.dataset.target);
+        modal.classList.add('open');
+        overlay.classList.add('open');
+      });
+    });
+    document.querySelectorAll('.modal-close').forEach(x => {
+      x.addEventListener('click', () => {
+        x.closest('.modal').classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    });
+    overlay.addEventListener('click', () => {
+      document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+      overlay.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
