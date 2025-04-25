@@ -249,11 +249,16 @@ footer {
 }
 
 @media (max-width: 600px) {
-  /* Ensure open modals start lower on the screen so the close-X isn’t under the address bar */
+  .modal {
+    top: auto;
+    bottom: 0;
+    height: 90vh;
+  }
+
   .modal.open {
-    top: 30vh !important;    /* push the modal down 10% of viewport height */
-    bottom: auto !important;  /* disable bottom anchoring */
-    transform: translate(-50%, 0); /* slide into view unchanged */
+    top: unset !important;
+    bottom: unset !important;
+    transform: translate(-50%, 30vh) !important; /* moves modal DOWN */
   }
 }
 
