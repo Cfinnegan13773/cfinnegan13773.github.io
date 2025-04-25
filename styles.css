@@ -218,21 +218,40 @@ footer {
 /* Responsive: mobile */
 @media (max-width: 600px) {
   .modal {
-    top: 20vh !important;         /* Push modal down from the top */
-    left: 50%;
-    transform: translateX(-50%) !important; /* Center horizontally ONLY */
-    bottom: auto !important;      /* Disable bottom anchoring */
+    position: fixed;
+    top: 20vh;                         /* Start 20% down from top of screen */
+    left: 50%;                        /* Center horizontally */
+    transform: translateX(-50%);      /* Align center without shifting vertically */
+    bottom: auto;
     height: auto;
     max-height: 70vh;
+    z-index: 1001;
+
+    /* HIDDEN by default */
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
 
   .modal.open {
     display: block;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .modal-content {
     max-height: 60vh;
     overflow-y: auto;
     padding-right: 0.5rem;
+  }
+
+  /* Overlay behavior on mobile (optional, for dimming background) */
+  .modal-overlay.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 }
