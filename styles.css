@@ -247,3 +247,10 @@ footer {
     padding-right: 0.5rem;
   }
 }
+
+/* On phones, push open modals up so the close-X isn’t hidden */
+@media (max-width: 600px) {
+  .modal.open {
+    bottom: 10vh !important;  /* lift the modal up 10% of viewport height */
+  }
+}
