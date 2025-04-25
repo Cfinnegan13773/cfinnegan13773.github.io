@@ -269,7 +269,7 @@ footer {
 
   .inline-button {
     /* Make each button a bit smaller or allow wrapping */
-    padding: 0.5rem 1rem !important;
-    font-size: 0.9rem !important;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.7rem !important;
   }
 }
