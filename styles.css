@@ -248,9 +248,12 @@ footer {
   }
 }
 
-/* On phones, push open modals up so the close-X isn’t hidden */
 @media (max-width: 600px) {
+  /* Ensure open modals start lower on the screen so the close-X isn’t under the address bar */
   .modal.open {
-    bottom: 10vh !important;  /* lift the modal up 10% of viewport height */
+    top: 10vh !important;    /* push the modal down 10% of viewport height */
+    bottom: auto !important;  /* disable bottom anchoring */
+    transform: translate(-50%, 0); /* slide into view unchanged */
   }
 }
+
