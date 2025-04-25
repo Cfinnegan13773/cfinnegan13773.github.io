@@ -126,6 +126,49 @@ footer {
   padding: 1.5rem;
 }
 
+
+
+/* Form layout: two columns on desktop, one on small screens */
+.modal-content form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Make all inputs span their grid cell */
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Let the message box take the full width */
+.modal-content form textarea {
+  grid-column: 1 / -1;
+  min-height: 120px;
+}
+
+/* And have the submit button span full width too */
+.modal-content form button[type="submit"] {
+  grid-column: 1 / -1;
+  justify-self: start;  /* or center if you prefer */
+  margin-top: 0.5rem;
+}
+
+/* On very small screens, drop back to a single column */
+@media (max-width: 600px) {
+  .modal-content form {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
 .modal-close {
   position: absolute;
   top: 0.5rem;
