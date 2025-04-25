@@ -255,3 +255,21 @@ footer {
     visibility: visible;
   }
 }
+
+@media (max-width: 600px) {
+  .inline-buttons {
+    /* Span the full width of the viewport */
+    left: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+
+    /* Distribute buttons evenly */
+    justify-content: space-around !important;
+  }
+
+  .inline-button {
+    /* Make each button a bit smaller or allow wrapping */
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
