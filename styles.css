@@ -91,86 +91,62 @@ footer {
   color: #5f6b78;
 }
 
-/* Modal overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 1000;
-}
-
-.modal-overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Modal base */
-.modal {
-  position: fixed;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 100%);
-  width: 90%;
-  max-width: 600px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-  z-index: 1001;
-}
-
-.modal.open {
-  transform: translate(-50%, 0);
-}
-
-/* Modal content */
-.modal-content {
-  padding: 1.5rem;
-  position: relative;
-}
-
-/* Close button */
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #5f6b78;
-}
-
-.modal-close:hover {
-  color: #c8102e;
-}
-
-/* Form fields */
-.modal-content form input,
-.modal-content form textarea {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #ddd5c0;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: Arial, sans-serif;
-}
-
-.modal-content form input:focus,
-.modal-content form textarea:focus {
-  outline: 2px solid #c8102e;
-}
-
 /* FAQ & Experience lists */
 .faq-list li,
 .exp-list li {
   margin-bottom: 1rem;
   color: #333;
 }
+
+/* ─── Unified Modal Styles ─────────────────────────────────────── */
+/* Hides modals by default, shows only when .open is added via JS, and enables scrolling */
+.modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 5vh;                      /* 5% down from top so the “×” is visible */
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;              /* Prevent overflow beyond viewport */
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  overflow: hidden;              /* Container hides overflow */
+  z-index: 1001;
+}
+
+.modal.open {
+  display: block;                /* Show when JS adds .open */
+}
+
+.modal-content {
+  max-height: calc(90vh - 3rem); /* Room for padding and close button */
+  overflow-y: auto;              /* Scroll if content is taller */
+  padding: 1.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;                      /* Full-screen overlay */
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.modal-overlay.open {
+  display: block;
+}
+/* ─── End Unified Modal Styles ──────────────────────────────────── */
 
 /* Four floating buttons at bottom */
 .inline-buttons {
@@ -215,63 +191,19 @@ footer {
   }
 }
 
-
-/* Responsive: mobile */
-@media (max-width: 600px) {
-  .modal {
-    position: fixed;
-    top: 20vh;                         /* Start 20% down from top of screen */
-    left: 50%;                        /* Center horizontally */
-    transform: translateX(-50%);      /* Align center without shifting vertically */
-    bottom: auto;
-    height: auto;
-    max-height: 70vh;
-    z-index: 1001;
-
-    /* HIDDEN by default */
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .modal.open {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .modal-content {
-    max-height: 60vh;
-    overflow-y: auto;
-    padding-right: 0.5rem;
-  }
-
-  /* Overlay behavior on mobile (optional, for dimming background) */
-  .modal-overlay.open {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
+/* Responsive: mobile — stack buttons vertically to avoid clipping */
 @media (max-width: 600px) {
   .inline-buttons {
-    /* Span the full width of the viewport */
-    left: 0 !important;
-    width: 100% !important;
-    transform: none !important;
-
-    /* Distribute buttons evenly */
-    justify-content: space-around !important;
+    flex-direction: column;
+    align-items: center;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    bottom: 1rem !important;
   }
 
   .inline-button {
-    /* Make each button a bit smaller or allow wrapping */
-    padding: 0.2rem 0.5rem !important;
-    font-size: 0.8rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.95rem !important;
   }
 }
-
