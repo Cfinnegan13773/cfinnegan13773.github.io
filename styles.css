@@ -225,20 +225,3 @@ footer {
   }
 }
 
-/* Enable scrolling inside modals on phones */
-@media (max-width: 600px) {
-  /* Make the modal almost full-screen in height */
-  .modal {
-    top: auto;               /* ignore desktop top positioning */
-    bottom: 0;               /* always anchored to bottom */
-    height: 90vh;            /* fill 90% of viewport height */
-    transform: translate(-50%, 0); /* slide up into view */
-  }
-
-  /* Allow the content area to scroll if it's too tall */
-  .modal-content {
-    max-height: calc(90vh - 2rem); /* subtract any padding you have */
-    overflow-y: auto;
-    padding-right: 0.5rem;     /* give some room for the scrollbar */
-  }
-}
