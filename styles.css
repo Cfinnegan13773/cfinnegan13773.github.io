@@ -99,20 +99,21 @@ footer {
 }
 
 /* ─── Unified Modal Styles ─────────────────────────────────────── */
-/* Hides modals by default, shows only when .open is added via JS, and enables scrolling */
+/* Modals are hidden by default; when .open is added they appear */
+/* The entire modal container scrolls if content is long */
 .modal {
   display: none;
   position: fixed;
   left: 50%;
-  top: 5vh;                      /* 5% down from top so the “×” is visible */
+  top: 5vh;                      /* 5% down from top of viewport */
+  bottom: 5vh;                   /* 5% up from bottom of viewport */
   transform: translateX(-50%);
   width: 90%;
   max-width: 600px;
-  max-height: 90vh;              /* Prevent overflow beyond viewport */
   background: rgba(255,255,255,0.95);
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  overflow: hidden;              /* Container hides overflow */
+  overflow-y: auto;              /* Entire container scrolls */
   z-index: 1001;
 }
 
@@ -121,8 +122,7 @@ footer {
 }
 
 .modal-content {
-  max-height: calc(90vh - 3rem); /* Room for padding and close button */
-  overflow-y: auto;              /* Scroll if content is taller */
+  /* Just padding; scrolling handled by container */
   padding: 1.5rem;
 }
 
@@ -138,7 +138,7 @@ footer {
 .modal-overlay {
   display: none;
   position: fixed;
-  inset: 0;                      /* Full-screen overlay */
+  inset: 0;                      /* shorthand for top/right/bottom/left: 0 */
   background: rgba(0,0,0,0.4);
   z-index: 1000;
 }
@@ -191,15 +191,15 @@ footer {
   }
 }
 
-/* Responsive: mobile — stack buttons vertically to avoid clipping */
+/* Responsive: mobile — stack buttons vertically */
 @media (max-width: 600px) {
   .inline-buttons {
     flex-direction: column;
     align-items: center;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: auto !important;
     bottom: 1rem !important;
+    width: auto !important;
   }
 
   .inline-button {
