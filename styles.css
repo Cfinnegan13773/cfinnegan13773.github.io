@@ -1,6 +1,36 @@
+/* ─── Central Valley Map on Gray Background Only ───────────────── */
+
+/* Make body a positioning context */
+body {
+  position: relative;
+  z-index: 1; /* sit above the map overlay */
+}
+
+/* Overlay the map across the entire viewport, under the site-container */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("assets/green-field.png") center center / contain no-repeat;
+  opacity: 1.0;
+  pointer-events: none;
+  z-index: 0; /* beneath the body content (site-container will cover it) */
+}
+
+/* Ensure your container—and its constitution bg—sit above the map */
+.site-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+
+
 /* Dark slate background across full site */
 body {
-  background-color: #3a4a54;
+  background-color: #5f6b78;
   background-image: url("assets/paper-fibers.png");
   background-repeat: repeat;
 }
