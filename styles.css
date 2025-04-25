@@ -225,3 +225,25 @@ footer {
   }
 }
 
+/* Mobile: make modals scrollable but only open when .open is present */
+@media (max-width: 600px) {
+  /* Make the modal almost full-height */
+  .modal {
+    top: auto;              /* ignore desktop top */
+    bottom: 0;              /* anchor to bottom */
+    height: 90vh;           /* fill 90% of viewport height */
+    transform: translate(-50%, 100%);  /* keep hidden by default */
+  }
+
+  /* Only slide into view when .open is applied */
+  .modal.open {
+    transform: translate(-50%, 0);
+  }
+
+  /* Allow inner scrolling of long content */
+  .modal-content {
+    max-height: calc(90vh - 2rem);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+}
