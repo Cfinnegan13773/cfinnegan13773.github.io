@@ -217,44 +217,22 @@ footer {
 
 /* Responsive: mobile */
 @media (max-width: 600px) {
-  .inline-buttons {
-    flex-direction: column;
-    align-items: center;
-    bottom: 5rem;
-    gap: 0.75rem;
-  }
-}
-
-/* Mobile: make modals scrollable but only open when .open is present */
-@media (max-width: 600px) {
-  /* Make the modal almost full-height */
   .modal {
-    top: auto;              /* ignore desktop top */
-    bottom: 0;              /* anchor to bottom */
-    height: 90vh;           /* fill 90% of viewport height */
-    transform: translate(-50%, 100%);  /* keep hidden by default */
+    position: fixed;
+    top: 20vh !important;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    bottom: auto !important;
+    height: auto;
+    max-height: 70vh;
+    z-index: 1001;
+    display: none; /* hidden by default */
   }
 
-  /* Only slide into view when .open is applied */
   .modal.open {
-    transform: translate(-50%, 0);
-  }
-
-  /* Allow inner scrolling of long content */
-  .modal-content {
-    max-height: calc(90vh - 2rem);
-    overflow-y: auto;
-    padding-right: 0.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .modal {
-    top: 20vh !important;           /* Start 20% down from top of screen */
-    bottom: auto !important;        /* Cancel bottom anchoring */
-    height: auto;                   /* Let it size based on content */
-    max-height: 70vh;               /* Prevent it from being too tall */
-    transform: translateX(-50%) !important;  /* Horizontally center only */
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
   }
 
   .modal-content {
@@ -263,4 +241,3 @@ footer {
     padding-right: 0.5rem;
   }
 }
-
