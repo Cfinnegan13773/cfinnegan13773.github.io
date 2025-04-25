@@ -215,6 +215,29 @@ footer {
   }
 }
 
+/* DESKTOP: keep slide‐up but position open modal at top + enable scrolling */
+@media (min-width: 601px) {
+  .modal {
+    /* still hidden off the bottom */
+    bottom: 0;
+    top: auto;
+    transform: translate(-50%, 100%);
+  }
+  .modal.open {
+    /* slide up into view, with the top of the modal visible */
+    bottom: auto !important;
+    top: 5vh !important;             /* 5% down from top of viewport */
+    transform: translate(-50%, 0) !important;
+  }
+  .modal-content {
+    /* allow scrolling if the modal is taller than the viewport */
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
+
+
+
 /* Responsive: mobile */
 @media (max-width: 600px) {
   .modal {
