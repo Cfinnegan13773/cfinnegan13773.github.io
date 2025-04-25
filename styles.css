@@ -250,15 +250,17 @@ footer {
 
 @media (max-width: 600px) {
   .modal {
-    top: auto;
-    bottom: 0;
-    height: 60vh;
+    top: 20vh !important;           /* Start 20% down from top of screen */
+    bottom: auto !important;        /* Cancel bottom anchoring */
+    height: auto;                   /* Let it size based on content */
+    max-height: 70vh;               /* Prevent it from being too tall */
+    transform: translateX(-50%) !important;  /* Horizontally center only */
   }
 
-  .modal.open {
-    top: unset !important;
-    bottom: unset !important;
-    transform: translate(-50%, 30vh) !important; /* moves modal DOWN */
+  .modal-content {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 0.5rem;
   }
 }
 
