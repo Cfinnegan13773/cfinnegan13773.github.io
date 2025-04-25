@@ -252,7 +252,7 @@ footer {
   .modal {
     top: auto;
     bottom: 0;
-    height: 90vh;
+    height: 60vh;
   }
 
   .modal.open {
