@@ -11,7 +11,7 @@ body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url("assets/madera.png") center center / 100% no-repeat;
+  background: url("assets/Madera.png") center center / 100% no-repeat;
   opacity: 1.0;
   pointer-events: none;
   z-index: 0; /* beneath the body content (site-container will cover it) */
