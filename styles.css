@@ -225,6 +225,8 @@ footer {
 }
 
 .inline-button {
+  all: unset; /* <-- reset everything */
+  font-family: inherit; /* <-- inherit your site's font */
   background-color: #a3493f;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -291,5 +293,27 @@ footer {
     white-space: nowrap !important;
     text-align: center !important;
   }
+
+  .form-submit-button {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a3493f;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out;
+    width: 100%; /* stretch full width inside modal */
+    box-sizing: border-box;
+  }
+  
 }
 
