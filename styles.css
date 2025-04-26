@@ -256,11 +256,13 @@ footer {
   }
 }
 
-/* Responsive: mobile — stack buttons vertically */
+/* Responsive: mobile — buttons */
 @media (max-width: 600px) {
   .inline-buttons {
-    flex-direction: column;
+    flex-direction: row; /* KEEP buttons in a line */
     align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Smaller space between buttons */
     left: 50% !important;
     transform: translateX(-50%) !important;
     bottom: 1rem !important;
@@ -268,10 +270,11 @@ footer {
   }
 
   .inline-button {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.25rem 0.5rem !important; /* Smaller padding */
+    font-size: 0.7rem !important;       /* 7 font size as you asked */
   }
 }
+
 
 /* Add or merge with existing mobile media query */
 @media (max-width: 600px) {
