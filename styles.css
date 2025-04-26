@@ -25,9 +25,6 @@ body::before {
 
 
 
-
-
-
 /* Dark slate background across full site */
 body {
   background-color: #5f6b78;
@@ -194,11 +191,6 @@ footer {
 }
 
 
-
-
-
-
-
 .modal-close {
   position: absolute;
   top: 0.5rem;
@@ -278,5 +270,12 @@ footer {
   .inline-button {
     padding: 0.5rem 1rem !important;
     font-size: 0.95rem !important;
+  }
+}
+
+/* Add or merge with existing mobile media query */
+@media (max-width: 600px) {
+  body::before {
+    background: url("assets/Madera.png") center center / cover no-repeat;
   }
 }
