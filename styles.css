@@ -19,9 +19,22 @@ body::before {
 
 /* Ensure your container—and its constitution bg—sit above the photo */
 .site-container {
+  margin: 0 auto 2rem auto;
+  width: 80%;
+  max-width: 800px;
   position: relative;
-  z-index: 2;
+  background-image: url("assets/constitution.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-blend-mode: lighten;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* << ADD THIS */
+  overflow: hidden;
 }
+
 
 
 
@@ -166,25 +179,10 @@ footer {
 /* Make all inputs span their grid cell */
 .modal-content form input,
 .modal-content form textarea {
-  all: unset;
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  font-size: 1rem;
-  font-family: inherit;
   box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* On focus, inputs glow slightly */
-.modal-content form input:focus,
-.modal-content form textarea:focus {
-  border-color: #a3493f;
-  box-shadow: 0 0 5px rgba(163, 73, 63, 0.5);
-  background-color: #fff;
-}
 
 
 /* Let the message box take the full width */
