@@ -131,6 +131,18 @@ footer {
   color: #5f6b78;
 }
 
+.footer-cookie-notice {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.footer-cookie-notice a {
+  color: #a3493f;
+  text-decoration: underline;
+}
+
+
 /* FAQ & Experience lists */
 .faq-list li,
 .exp-list li {
