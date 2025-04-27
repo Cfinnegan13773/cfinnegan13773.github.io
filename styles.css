@@ -185,7 +185,7 @@ footer {
 #contactModal .modal-content {
   /* first layer: sepia-tone overlay at 60% opacity, second layer: image */
   background-image:
-    linear-gradient(rgba(244,236,224,0.6), rgba(244,236,224,0.6)),
+    linear-gradient(rgba(244,236,224,0.7), rgba(244,236,224,0.7)),
     url("assets/contact-modal-image.jpg");
   background-size: cover;
   background-position: center;
@@ -219,7 +219,7 @@ footer {
 /* Service Area Modal */
 #service-area-modal .modal-content {
   background-image:
-    linear-gradient(rgba(244,236,224,0.9), rgba(244,236,224,0.9)),
+    linear-gradient(rgba(244,236,224,0.7), rgba(244,236,224,0.7)),
     url("assets/service-area-modal-image.jpg");
   background-size: cover;
   background-position: center;
