@@ -179,10 +179,25 @@ footer {
 /* Make all inputs span their grid cell */
 .modal-content form input,
 .modal-content form textarea {
+  all: unset;
   width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  font-family: inherit;
   box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+/* On focus, inputs glow slightly */
+.modal-content form input:focus,
+.modal-content form textarea:focus {
+  border-color: #a3493f;
+  box-shadow: 0 0 5px rgba(163, 73, 63, 0.5);
+  background-color: #fff;
+}
 
 
 /* Let the message box take the full width */
