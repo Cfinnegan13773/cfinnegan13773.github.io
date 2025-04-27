@@ -156,18 +156,19 @@ footer {
 .modal {
   display: none;
   position: fixed;
+  top: 5vh;
   left: 50%;
-  top: 5vh;                      /* 5% down from top of viewport */
-  bottom: 5vh;                   /* 5% up from bottom of viewport */
   transform: translateX(-50%);
   width: 90%;
   max-width: 600px;
+  max-height: 90vh;
   background: rgba(255,255,255,0.95);
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  overflow-y: auto;              /* Entire container scrolls */
+  overflow-y: auto;
   z-index: 1001;
 }
+
 
 .modal.open {
   display: block;                /* Show when JS adds .open */
@@ -178,6 +179,53 @@ footer {
   padding: 1.5rem;
 }
 
+/* ─── Sepia + Background Images for Each Modal ────────────────────────── */
+
+/* Contact Modal */
+#contactModal .modal-content {
+  /* first layer: sepia-tone overlay at 60% opacity, second layer: image */
+  background-image:
+    linear-gradient(rgba(244,236,224,0.6), rgba(244,236,224,0.6)),
+    url("assets/contact-modal-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* ensure text is dark enough against the light image */
+  color: #333;
+}
+
+/* FAQ Modal */
+#faqModal .modal-content {
+  background-image:
+    linear-gradient(rgba(244,236,224,0.6), rgba(244,236,224,0.6)),
+    url("assets/faq-modal-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+/* Experience Modal */
+#expModal .modal-content {
+  background-image:
+    linear-gradient(rgba(244,236,224,0.9), rgba(244,236,224,0.9)),
+    url("assets/experience-modal-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+/* Service Area Modal */
+#service-area-modal .modal-content {
+  background-image:
+    linear-gradient(rgba(244,236,224,0.9), rgba(244,236,224,0.9)),
+    url("assets/service-area-modal-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
 
 
 /* Form layout: two columns on desktop, one on small screens */
