@@ -91,7 +91,7 @@ h1 {
 .tagline {
   color: #5f6b78;
   font-family: 'Copperplate', 'Copperplate Gothic Bold', serif;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   letter-spacing: 0.05em;
   font-style: italic;
   font-weight: bold;
@@ -109,7 +109,7 @@ h1 {
 .contact-inline {
   text-align: center;
   margin-top: 1.5rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -127,7 +127,7 @@ h1 {
 footer {
   text-align: center;
   margin-top: 2rem;
-  font-size: 0.9rem;
+  font-size: 1.1 rem;
   color: #5f6b78;
 }
 
