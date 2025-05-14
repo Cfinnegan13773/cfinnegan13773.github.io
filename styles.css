@@ -426,19 +426,7 @@ footer {
 
 
 /* Responsive: mobile — buttons */
-@media (max-width: 600px) {
-  .pipe {
-    display: none;
-  }
 
-  .contact-inline {
-    font-size: 1rem; /* or 0.95rem */
-  }
-
-  .tagline {
-    font-size: 1.2rem;
-  }
-}
 
 @media (max-width: 600px) {
   .inline-buttons {
@@ -487,6 +475,19 @@ footer {
     width: 100%; /* stretch full width inside modal */
     box-sizing: border-box;
   }
-  
+  @media (max-width: 600px) {
+  .pipe {
+    display: none;
+  }
+
+  .contact-inline {
+    font-size: 1rem; /* or 0.95rem */
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
 }
 
+}
