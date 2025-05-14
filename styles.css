@@ -477,7 +477,7 @@ footer {
   }
 @media (max-width: 600px) {
   .pipe {
-    display: none;
+    display: none !important;
   }
 
   .contact-inline {
@@ -486,7 +486,7 @@ footer {
 
   .tagline {
     font-size: 1.2rem;
-    letter-spacing: .01em;
+    letter-spacing: .0em;
   }
 
 }
