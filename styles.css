@@ -475,7 +475,7 @@ footer {
     width: 100%; /* stretch full width inside modal */
     box-sizing: border-box;
   }
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
   .pipe {
     display: none;
   }
