@@ -491,15 +491,15 @@ footer {
   .contact-inline a + a::before {
     display: none !important;
   }
-
-  /*phone-email*/
-  .contact-inline {
+  /*Private Invest-LicNo*/
+  .tagline {
     font-size: 1.0rem;
     letter-spacing: 0em;
   }
-  /*copyright 2025 Finnegan Invest*/
-  .tagline {
+  /*phone-email*/
+  .contact-inline {
     font-size: 0.8rem;
     letter-spacing: 0em;
   }
+  
 }
