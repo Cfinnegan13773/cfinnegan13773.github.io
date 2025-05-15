@@ -113,7 +113,7 @@ header {
   font-family: 'Copperplate Bold', 'Copperplate Gothic Bold', Copperplate, serif;
   font-size: 1.0rem;
   text-transform: uppercase;
-  font-style: none;
+  font-style: normal;
   font-weight: bold;
   letter-spacing: 0.05em;
   text-align: center;
@@ -148,7 +148,7 @@ header {
   text-align: center;
   margin-top: 1.5rem;
   letter-spacing: 0.1em;
-  font-size: 1.5 rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -162,11 +162,20 @@ header {
   text-decoration: underline;
 }
 
+/* — add a vertical bar between the two links — */
+.contact-inline a + a::before {
+  content: "|";
+  margin: 0 0.5rem;       /* space on either side of the bar */
+  color: #a3493f;         /* same color as your links */
+  vertical-align: middle; /* ensure it lines up with text */
+}
+
+
 /* Footer styling */
 footer {
   text-align: center;
   margin-top: 2rem;
-  font-size: 1.1 rem;
+  font-size: 1.1rem;
   color: #5f6b78;
 }
 
@@ -477,10 +486,13 @@ footer {
   }
 
   /* ✅ mobile overrides for contact line & tagline */
-  .pipe {
+  
+  /* hide the bar on mobile */
+  .contact-inline a + a::before {
     display: none !important;
   }
 
+  
   .contact-inline {
     font-size: 0.5rem;
   }
