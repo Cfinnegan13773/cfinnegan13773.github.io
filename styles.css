@@ -436,7 +436,7 @@ footer {
     right: 0 !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap !important;        /* allow multiple rows */
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 0.5rem !important;
@@ -447,8 +447,8 @@ footer {
   }
 
   .inline-button {
-    flex: 1 1 30% !important;          /* each button takes ~30% width */
-    max-width: 30% !important;         /* caps width so 3 fit per row */
+    flex: 1 1 30% !important;
+    max-width: 30% !important;
     padding: 0.25rem 0.5rem !important;
     font-size: 0.7rem !important;
     white-space: nowrap !important;
@@ -472,23 +472,21 @@ footer {
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease-in-out;
-    width: 100%; /* stretch full width inside modal */
+    width: 100%;
     box-sizing: border-box;
   }
-@media (max-width: 600px) {
+
+  /* ✅ mobile overrides for contact line & tagline */
   .pipe {
     display: none !important;
   }
 
   .contact-inline {
-    font-size: .5rem; /* or 0.95rem */
+    font-size: 0.5rem;
   }
 
   .tagline {
     font-size: 1.2rem;
-    letter-spacing: .0em;
+    letter-spacing: 0em;
   }
-
-}
-
 }
