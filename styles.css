@@ -501,8 +501,9 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;          /* tweak this value to taste */
-    font-size: 0.75rem; /* smaller mobile font if desired */
+    gap: 0.8rem;          /* tweak this value to taste */
+    font-size: 1.0rem; /* smaller mobile font if desired */
+    letter-spacing: 0em;
   }
   
 }
