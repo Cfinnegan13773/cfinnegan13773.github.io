@@ -496,10 +496,13 @@ footer {
     font-size: 1.0rem;
     letter-spacing: 0em;
   }
-  /*phone-email*/
+  /* — increase wrap spacing between phone/email — */
   .contact-inline {
-    font-size: 0.8rem;
-    letter-spacing: 0em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;          /* tweak this value to taste */
+    font-size: 0.75rem; /* smaller mobile font if desired */
   }
   
 }
