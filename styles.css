@@ -494,6 +494,31 @@ footer {
   .modal-content form {
     grid-template-columns: 1fr;
   }
+  /* ─── Mobile Tagline Overrides ─────────────────────────── */
+@media (max-width: 600px) {
+  /* … your existing mobile rules … */
+
+  /* 1) Remove the “|” separator between tagline words */
+  .tagline .contact-word + .contact-word::before {
+    display: none !important;
+  }
+
+  /* 2) Force the words to wrap into multiple lines */
+  .tagline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;         /* space between each word */
+    letter-spacing: 0.02em; /* tighter letter spacing */
+    font-size:     0.9rem;  /* adjust to taste */
+    text-align: center;
+  }
+
+  /* 3) (Optional) If you need each word to sit on its own line */
+  .tagline .contact-word {
+    flex: 1 1 100%;
+  }
+
   .contact-inline {
     word-break: break-word;
     white-space: normal;
