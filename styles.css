@@ -515,5 +515,15 @@ footer {
     flex: 1 1 100%;
     text-align: center;
   }
+  /* Tel links */
+  .contact-inline a[href^="tel:"] {
+    font-size: 1.3rem;
+  }
+
+  /* Mailto links */
+  .contact-inline a[href^="mailto:"] {
+    font-size: 1.0rem;
+  }
+
 }
 
