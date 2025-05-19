@@ -512,16 +512,16 @@ footer {
     gap: 0.6rem;
   }
   .contact-inline a {
-    flex: 1 1 100%;
+    flex: 1 1 auto;
     text-align: center;
   }
-  /* Tel links */
   .contact-inline a[href^="tel:"] {
-    font-size: 1.0rem;
+  /* phone gets less relative width */
+  flex: 1 1 40%;
   }
-  /* Mailto links */
   .contact-inline a[href^="mailto:"] {
-    font-size: 0.7rem;
+  /* email gets more relative width */
+  flex: 1 1 60%;
   }
 
 }
