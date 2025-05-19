@@ -333,6 +333,8 @@ footer {
     word-break: break-word;
     white-space: normal;
     padding: 0 1rem;
+    letter-spacing: 0.02em;  /* reduce space between letters */
+    font-size: 1.1rem;
   }
 }
 
