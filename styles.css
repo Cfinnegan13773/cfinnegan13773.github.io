@@ -419,91 +419,86 @@ footer {
   }
 }
 
-/* Responsive: laptop/tablet */
+/* ─── Desktop: About Modal Layout ───────────────────────── */
+.about-modal-row {
+  display: flex;
+  align-items: flex-start;   /* align photo & text at top */
+  gap: 1.5rem;
+}
+.about-modal-text {
+  flex: 1;                   /* text takes remaining space */
+}
+.about-modal-photo-right {
+  margin-left: auto;         /* push photo to the right edge */
+}
+.about-modal-photo-right img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border: 2px solid #ccc;
+}
+
+/* ─── Tablet Override ───────────────────────────────────── */
 @media (max-width: 1024px) {
   .inline-buttons {
     bottom: 4rem;
   }
 }
 
-/* Add or merge with existing mobile media query */
+/* ─── Mobile Overrides ──────────────────────────────────── */
 @media (max-width: 600px) {
-  body::before {
-    background: url("assets/Madera.png") center center / cover no-repeat;
+
+  /* photo/text stack vertically */
+  .about-modal-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
-}
+  .about-modal-photo-right img {
+    width: 72px;
+    height: 72px;
+  }
 
-
-/* Responsive: mobile — buttons */
-
-
-@media (max-width: 600px) {
+  /* allow buttons to wrap so About shows */
   .inline-buttons {
     position: fixed;
-    bottom: 1rem !important;
-    left: 0 !important;
-    right: 0 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-    padding: 0 1rem !important;
-    box-sizing: border-box !important;
-    transform: none !important;
-  }
-
-  .inline-button {
-    flex: 1 1 30% !important;
-    max-width: 30% !important;
-    padding: 0.25rem 0.5rem !important;
-    font-size: 0.7rem !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-  }
-
-  .form-submit-button {
-    all: unset;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #a3493f;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 999px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease-in-out;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* ✅ mobile overrides for contact line & tagline */
-  
-  /* hide the bar on mobile */
-  .contact-inline a + a::before {
-    display: none !important;
-  }
-  /*Private Invest-LicNo*/
-  .tagline {
-    font-size: 1.0rem;
-    letter-spacing: 0em;
-  }
-  /* — increase wrap spacing between phone/email — */
-  .contact-inline {
+    bottom: 1rem;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem;          /* tweak this value to taste */
-    font-size: 1.0rem; /* smaller mobile font if desired */
-    letter-spacing: 0em;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    transform: none;
   }
-  
+  .inline-button {
+    flex: 1 1 48%;
+    max-width: 48%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* keep your other mobile tweaks here… */
+  body::before {
+    background: url("assets/Madera.png") center center / cover no-repeat;
+  }
+  .modal-content form {
+    grid-template-columns: 1fr;
+  }
+  .contact-inline {
+    word-break: break-word;
+    white-space: normal;
+    padding: 0 1rem;
+  }
+  .form-submit-button {
+    width: 100%;
+  }
 }
+
