@@ -479,54 +479,43 @@ footer {
     transform: none;
   }
   .inline-button {
-    flex: 1 1 25%; /*was48%*/
-    max-width: 25%; /*was48%*/
+    flex: 1 1 25%;   /* or 48%/31% for 2/3 per row */
+    max-width: 25%;
     padding: 0.25rem 0.5rem;
     font-size: 0.7rem;
     text-align: center;
     white-space: nowrap;
   }
 
-  /* keep your other mobile tweaks here… */
+  /* other mobile tweaks… */
   body::before {
     background: url("assets/Madera.png") center center / cover no-repeat;
   }
   .modal-content form {
     grid-template-columns: 1fr;
   }
-  /* ─── Mobile Tagline Overrides ─────────────────────────── */
-@media (max-width: 600px) {
-  /* … your existing mobile rules … */
-
-  /* 1) Remove the “|” separator between tagline words */
-  .tagline .contact-word + .contact-word::before {
-    display: none !important;
+  .form-submit-button {
+    width: 100%;
   }
 
-  /* 2) Force the words to wrap into multiple lines */
+  /* Mobile Tagline Overrides */
   .tagline {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;         /* space between each word */
-    letter-spacing: 0.02em; /* tighter letter spacing */
-    font-size:     0.9rem;  /* adjust to taste */
+    gap: 0.5rem;
+    letter-spacing: 0.02em;
+    font-size: 0.9rem;
     text-align: center;
   }
-
-  /* 3) (Optional) If you need each word to sit on its own line */
-  .tagline .contact-word {
-    flex: 1 1 100%;
+  .tagline .contact-word:nth-child(3) {
+    display: none !important;
+  }
+  .tagline .contact-word:nth-child(4) {
+    flex-basis: 100%;
   }
 
-  .contact-inline {
-    word-break: break-word;
-    white-space: normal;
-    padding: 0 1rem;
-  }
-  .form-submit-button {
-    width: 100%;
-  }
+  /* Mobile Contact-Line Overrides */
   .contact-inline a + a::before {
     display: none !important;
   }
@@ -541,13 +530,12 @@ footer {
     text-align: center;
   }
   .contact-inline a[href^="tel:"] {
-  /* phone gets less relative width */
-  flex: 1 1 40%;
+    flex: 1 1 40%;
   }
   .contact-inline a[href^="mailto:"] {
-  /* email gets more relative width */
-  flex: 1 1 60%;
+    flex: 1 1 60%;
   }
-
+  
 }
+
 
