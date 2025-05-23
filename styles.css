@@ -521,17 +521,25 @@ footer {
     justify-content: center;
     gap: 0.6rem;
   }
-  .contact-inline a {
-    flex: 1 1 auto;
-    text-align: center;
-  }
-  .contact-inline a[href^="tel:"] {
-    flex: 1 1 40%;
-  }
-  .contact-inline a[href^="mailto:"] {
-    flex: 1 1 60%;
-  }
   
+  /* Stack & center contact links */
+  .contact-inline {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 1.5rem auto 0;
+  }
+  .contact-inline a {
+    flex: none;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+  }
 }
+
+  
+
 
 
