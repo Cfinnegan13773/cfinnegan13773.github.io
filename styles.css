@@ -145,12 +145,17 @@ header {
 
 /* Contact inline */
 .contact-inline {
-  text-align: center;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+  gap: 3.5rem;     /* ← tweak this number until it feels right */
   margin-top: 1.5rem;
   letter-spacing: 0.1em;
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 
 .contact-inline a {
   color: #a3493f;
@@ -161,15 +166,6 @@ header {
 .contact-inline a:hover {
   text-decoration: underline;
 }
-
-/* — add a vertical bar between the two links — */
-.contact-inline a + a::before {
-  content: "|";
-  margin: 0 0.5rem;       /* space on either side of the bar */
-  color: #a3493f;         /* same color as your links */
-  vertical-align: middle; /* ensure it lines up with text */
-}
-
 
 /* Footer styling */
 footer {
@@ -293,7 +289,7 @@ footer {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
-  font-size: 1rem;
+  font-size: 1.0rem;
   font-family: inherit;
   box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
