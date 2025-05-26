@@ -451,14 +451,14 @@ footer {
 
   /* photo/text stack vertically */
   .about-modal-row {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
   }
   .about-modal-photo-right img {
-    width: 72px;
-    height: 72px;
+    width: 90px;
+    height: 90px;
   }
 
   /* allow buttons to wrap so About shows */
