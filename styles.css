@@ -538,6 +538,11 @@ footer {
     text-align: center;
     display: inline-block;
   }
+  #expModal .modal-content {
+    background-size: contain;     /* show entire image */
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
 }
 
   
