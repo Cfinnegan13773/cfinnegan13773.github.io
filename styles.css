@@ -221,6 +221,7 @@ footer {
 .modal-content {
   /* Just padding; scrolling handled by container */
   padding: 1.5rem;
+  font-size: 1.125rem; /*font size of modal content*/
 }
 
 /* ─── Sepia + Background Images for Each Modal ────────────────────────── */
@@ -229,7 +230,7 @@ footer {
 #contactModal .modal-content {
   /* first layer: sepia-tone overlay at 60% opacity, second layer: image */
   background-image:
-    linear-gradient(rgba(244,236,224,0.7), rgba(244,236,224,0.7)),
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), /*(rgba(244,236,224,0.7), rgba(244,236,224,0.7))*/
     url("assets/contact-modal-image.jpg");
   background-size: cover;
   background-position: center;
@@ -241,7 +242,7 @@ footer {
 /* FAQ Modal */
 #faqModal .modal-content {
   background-image:
-    linear-gradient(rgba(244,236,224,0.6), rgba(244,236,224,0.6)),
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),  /*(rgba(244,236,224,0.6), rgba(244,236,224,0.6))*/
     url("assets/faq-modal-image.jpg");
   background-size: cover;
   background-position: center;
@@ -252,7 +253,7 @@ footer {
 /* Experience Modal */
 #expModal .modal-content {
   background-image:
-    linear-gradient(rgba(244,236,224,0.9), rgba(244,236,224,0.9)),
+    linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),    /*(rgba(244,236,224,0.9), rgba(244,236,224,0.9))*/
     url("assets/experience-modal-image.jpg");
   background-size: cover;
   background-position: center;
@@ -263,7 +264,7 @@ footer {
 /* Service Area Modal */
 #service-area-modal .modal-content {
   background-image:
-    linear-gradient(rgba(244,236,224,0.7), rgba(244,236,224,0.7)),
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),  /*(rgba(244,236,224,0.7), rgba(244,236,224,0.7))*/
     url("assets/service-area-modal-image.jpg");
   background-size: cover;
   background-position: center;
