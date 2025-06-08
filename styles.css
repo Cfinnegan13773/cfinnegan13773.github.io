@@ -248,6 +248,12 @@ footer {
   /* ensure text is dark enough against the light image */
   color: #333;
 }
+#contactModal h2 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
 
 /* FAQ Modal */
 #faqModal .modal-content {
