@@ -167,6 +167,16 @@ header {
   text-decoration: underline;
 }
 
+.qed-phrase {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: italic;
+  color: #5f6b78;
+  margin-top: 0.9rem;
+  }
+
+
 /* Footer styling */
 footer {
   text-align: center;
@@ -333,7 +343,11 @@ footer {
     letter-spacing: 0.02em;  /* reduce space between letters */
     font-size: 1.1rem;
   }
+  .qed-phrase {
+    font-size: 0.85rem;  /* only on small screens */
+  }
 }
+
 
 
 .modal-close {
@@ -544,11 +558,13 @@ footer {
   word-break: normal;
   font-size: 0.85rem; /* optional */
   }
+  
   #expModal .modal-content {
     background-size: contain;     /* show entire image */
     background-position: top center;
     background-repeat: no-repeat;
   }
+
 }
 
   
